@@ -82,6 +82,7 @@
                 mesh.scene.scale.set(10, 10, 10);
                 scene.add(mesh.scene);
                 playerMap.set(data.socketid, mesh.scene);
+                socket.emit('player', {socketid :data.socketid ,position: mesh.scene.position, rotation: mesh.scene.rotation});
             });
         }
     });
